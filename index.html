@@ -17,8 +17,6 @@
 </head>
 
 <body ng-controller='practiceController'>
-  <p>My name is: {{name}}</p>
-  <p>My age for a month: {{age}}</p>
 
 <h1>The <strong>facebook</strong> Friend Machine</h1>
 
@@ -34,7 +32,7 @@
     <input class="form-control" placeholder="Search Your Friends' Name" >
     <input class="form-control" placeholder="Search Your Freinds' Location" > 
  -->
-    <select class="input-medium">
+    <select class="input-medium" >
         <option>Name</option>
         <option># friends</option>
         <option>City</option>
@@ -49,17 +47,17 @@
 </form>
 
   <ul>
-    <li class='friend'>
+    <li ng-repeat='friend in friends' class='friend'>
        <img class="profile-pic" src='https://scontent-a.xx.fbcdn.net/hprofile-ash3/833_10200838803828124_1233160321_a.jpg'>
-      <h3>Cali Fornia</h3>
+      <h3>{{friend.name}}</h3>
       <div class="location">
-        Location: New Port Beach, California, United States
+        {{friend.location}}
       </div>      
       <div class="status">
-        Status: I hate the snow. I wish I was on the beach right now!!! <span class="hashtag">#ihateprovo</span>
+        {{friend.current_location.name}} <span class="hashtag">{{friend.hashtag}}</span>
       </div>      
       <div class="num-friends">
-        Friends: 1,367
+        {{friend.friend_count}}
       </div>
     </li>
   </ul>
